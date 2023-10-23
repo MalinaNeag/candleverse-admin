@@ -113,12 +113,16 @@ function Categories({swal}) {
                 onChange={ev => setName(ev.target.value)}
                 value={name}/>
             <select
-                onChange={ev => setParentCategory(ev.target.value)}
-                value={parentCategory}>
-              <option key={category._id} value="">No parent category</option>
-              {categories.length > 0 && categories.map(category => (
-                  <option key={c._id} value={c._id}>{category.name}</option>
-              ))}
+                onChange={(ev) => setParentCategory(ev.target.value)}
+                value={parentCategory}
+            >
+              <option value="">No parent category</option>
+              {categories.length > 0 &&
+                  categories.map((category) => (
+                      <option value={category._id} key={category._id}>
+                        {category.name}
+                      </option>
+                  ))}
             </select>
           </div>
           <div className="mb-2">
